@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-
     public float acceleration;
     public float maxSpeed;
 
@@ -25,7 +24,9 @@ public class PlayerController : MonoBehaviour
     //public GameObject WinPanel;
     //public TextMeshProUGUI TextWin;
 
-    private float turnSpeed = 50f;
+    private float turnSpeed = 1000f;
+
+    private float turnAfter = 0.5f;
 
 
 
@@ -70,8 +71,15 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.tag == "Rock")
         {
-            transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed);
+            transform.Rotate(0,20,0);
+            Invoke("TurnAgain", 0.35f);
+
         }
+    }
+
+    void TurnAgain()
+    {
+        transform.Rotate(0,-20,0);
     }
 
     /*public void RestartGame()
