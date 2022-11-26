@@ -69,11 +69,15 @@ public class PlayerController : MonoBehaviour
             acceleration = 0;
         }*/
 
-        if (other.gameObject.tag == "Rock")
+        /*if (other.gameObject.tag == "Rock")
         {
             transform.Rotate(0,20,0);
             Invoke("TurnAgain", 0.35f);
 
+        }*/
+        if(other.gameObject.tag == "Kill")
+        {
+            Destroy(gameObject);
         }
     }
 
