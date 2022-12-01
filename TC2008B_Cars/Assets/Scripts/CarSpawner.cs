@@ -22,9 +22,6 @@ public class CarSpawner : MonoBehaviour
                 indexAI = UnityEngine.Random.Range(0, ai.Count);
                 indexSpawn = UnityEngine.Random.Range(0, spawn.Length);
 
-                string name = ai[indexAI].name;
-                Debug.Log(name);
-
                 //I am currently using this kind of format since this is what I know for now.
                 Instantiate(ai[indexAI], spawn[indexSpawn].transform.position, spawn[indexSpawn].transform.rotation);
             }
