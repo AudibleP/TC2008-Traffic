@@ -19,7 +19,7 @@ public class TimeManager : MonoBehaviour
 
     private float minuteToRealTime = 1f;
 
-    private float timer;
+    public static float timer;
 
     // Start is called before the first frame update
     void Start()
